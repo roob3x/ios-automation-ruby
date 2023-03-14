@@ -1,0 +1,7 @@
+Gemfile.lock
+reports/allure-results/*.json
+reports/allure-results/*.csv
+configs/*.json
+*.log
+*.DS_Store
+*.idea

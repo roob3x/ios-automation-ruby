@@ -1,0 +1,33 @@
+home_title:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[@name="Meus Carros"]'
+add_btn:
+  type: 'ACCESS_ID'
+  value: 'Add'
+tcross_menu:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="T-Cross"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+pulse_menu:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="PULSE"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+kwid_menu:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="KWID"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+compass_menu:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Compass"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+marca_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Marca *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+modelo_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Modelo *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+versao_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Versao *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+ano_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Ano Modelo *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+cadastrar_btn:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Cadastrar"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
