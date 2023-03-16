@@ -1,5 +1,5 @@
 # androind-automation-ruby
-Projeto de automacao de testes mobile em android utilizando Ruby,Appium e cucumber.
+Projeto de automacao de testes mobile em IOS utilizando Ruby,Appium e cucumber.
 Para que possamos executar o projeto precisamos baixar algumas dependencias:
 
 ## DOWNLOADS
@@ -9,15 +9,6 @@ Para que possamos executar o projeto precisamos baixar algumas dependencias:
     Sera necessario tambem que faca o download do appium inspector para que seja possivel inspecionar os elementos do aplicativo. segue o link: 
     https://github.com/appium/appium-inspector/releases
 
-    Android Studio: é um pacote do Android Studio que possibilita que possamos instanciar dispositivos móveis de várias configurações e modelos de forma emulada e em vários níveis de API. Para isso, é preciso baixar o Android Studio e, durante o setup, marcar a opção de instalar também o AVD: https://developer.android.com/studio/index.html?hl=pt-br
-
-## Criar emulador a partir do Android Studio
-    Dentro do android studio na sessao de Device Manager escolha opcao de create device
-    Versao de OS: Optar por OS mais recente. a nao ser que exista alguma incopatibilidade para algo em especifico para a necessidade de usar uma versao mais anteriror.
-    Apos instalacao do emulador, voce estara apto para inicia-lo.
-    Instalar .apk debug no emulador. temos duas opcoes:
-    Arrastar a apk ate o emulador
-    Abra o teriminal e entre na pasta onde esta apk por exemplo: cd Usr/Downloads em seguida instale atraves do adb com o seguinte comando: adb install challenge-qa.apk
 
 ## Configurando variaveis de ambiente JAVA_HOME A ANDROID_HOME
 
