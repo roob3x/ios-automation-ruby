@@ -1,0 +1,15 @@
+marca_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Marca *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+modelo_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Modelo *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+versao_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Versao *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+ano_input:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Ano Modelo *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+cadastrar_btn:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Cadastrar"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
