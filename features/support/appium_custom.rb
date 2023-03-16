@@ -197,6 +197,42 @@ def hide_keyboard
   $logger.info('Fechou o teclado virtual')
 end
 
+def swipe_element(el)
+  $driver.find_element(:xpath, el['value'])
+  # Deslizar o elemento para a esquerda
+  $driver.swipe(start_x: 0.9, start_y: 0.5, end_x: 0.1, end_y: 0.5, duration: 800)
+end
+
+def get_center_screen
+        window = get_window
+        start_x = window.height * 0.50
+        start_y = window.height * 0.50
+        {x: start_x, y: start_y }
+end
+ # Gets the size element
+def get_size_element(el)
+    element_size = $driver.find_element(:xpath, el['value']).size
+    { size: element_size }
+end
+
+def swiper_element_direction(el, direction, size = 0.65)
+  element_size = get_size_element(el)
+
+  dir = direction.to_s.downcase
+  $logger.info("Deslizando o element #{el.to_s.downcase}. Parametro escolhido: #{dir}")
+
+  case dir
+  when 'left'
+    element = $driver.find_element(:xpath, el['value'])
+    location = element.location
+    start_x = location.x + element_size[:size].width
+    start_y = location.y + element_size[:size].height / 2
+    end_x = start_x - element_size[:size].width * 0.5
+    end_y = start_y
+  end
+  $driver.execute_script("mobile: dragFromToForDuration", {'duration':'1.0', 'fromX': start_x, 'fromY': start_y, 'toX': end_x, 'toY': end_y})
+end
+
 def refresh_screen
   $driver.refresh
 end

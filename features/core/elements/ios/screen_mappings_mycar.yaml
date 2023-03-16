@@ -6,16 +6,19 @@ add_btn:
   value: 'Add'
 tcross_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="T-Cross"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeCell[@name="t-cross, T-Cross"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+delete_menu:
+  type: 'XPATH'
+  value: '//XCUIElementTypeButton[@name="Delete"]'
 pulse_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="PULSE"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeCell[@name="pulse, PULSE"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
 kwid_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="KWID"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeCell[@name="kwid, KWID"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
 compass_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="Compass"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeCell[@name="compass, Compass"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
 marca_input:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="Marca *"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
@@ -31,3 +34,6 @@ ano_input:
 cadastrar_btn:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="Cadastrar"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+empty_car_list:
+  type: 'ACCESS_ID'
+  value: 'Voce nao possui carros cadastrados :('
