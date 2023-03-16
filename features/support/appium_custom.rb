@@ -1,90 +1,52 @@
 # frozen_string_literal: true
 
-def element_displayed?(el)
+def find_element(el)
   case el['type']
   when 'XPATH'
-    $wait.until { $driver.find_element(:xpath, el['value']).displayed? }
+    $driver.find_element(:xpath, el['value'])
   when 'ID'
-    $wait.until { $driver.find_element(:id, el['value']).displayed? }
+    $driver.find_element(:id, el['value'])
   when 'CLASS'
-    $wait.until { $driver.find_element(:class, el['value']).displayed? }
+    $driver.find_element(:class, el['value'])
+  when 'ACCESS_ID'
+    $driver.find_element(:accessibility_id, el['value'])
   when 'TEXT'
-    $wait.until { $driver.find_element(:text, el['value']).displayed? }
+    $driver.find_element(:text, el['value'])
+  when 'NAME'
+    $driver.find_element(:name, el['value'])
   else
-    raise('element_displayed?: Tipo não implementado ou não encontrado')
+    raise('tipo de elemento nao encontrado ou nao definido')
   end
+end
+
+def element_displayed?(el)
+  $wait.until {find_element(el).displayed? }
   $logger.info("Aguardou a exibição do elemento #{el['value']} usando o tipo de busca #{el['type']}")
 end
 
 def click(el)
   wait_for_element_exist(el)
-  case el['type']
-  when 'XPATH'
-    $driver.find_element(:xpath, el['value']).click
-  when 'ID'
-    $driver.find_element(:id, el['value']).click
-  when 'CLASS'
-    $driver.find_element(:class, el['value']).click
-  when 'ACCESS_ID'
-    $driver.find_element(:accessibility_id, el['value']).click
-  when 'TEXT'
-    $driver.find_element(:text, el['value']).click
-  else
-    raise('click: Tipo não implementado ou não encontrado')
-  end
+  find_element(el).click
   $logger.info("Clicou no botão #{el['value']} usando o tipo de busca #{el['type']}")
 end
 
 def wait_for_element_exist(el)
-  case el['type']
-  when 'XPATH'
-    $wait.until {element_exists? el}
-  when 'ID'
-    $wait.until {element_exists? el}
-  when 'CLASS'
-    $wait.until {element_exists? el}
-  when 'ACCESS_ID'
-    $wait.until {element_exists? el}
-  else
-    raise('wait_for_element_exist: Tipo não implementado ou não encontrado')
-  end
+  $wait.until {element_exists? el}
   $logger.info("Aguardou a existência do elemento #{el['value']} usando o tipo de busca #{el['type']}")
 end
 
 def click_by_index(el, index)
   wait_for_element_exist(el)
-  case el['type']
-  when 'XPATH'
-    $driver.find_elements(:xpath, el['value'])[index].click
-  when 'ID'
-    $driver.find_elements(:id, el['value'])[index].click
-  when 'CLASS'
-    $driver.find_elements(:class, el['value'])[index].click
-  when 'ACCESS_ID'
-    $driver.find_elements(:accessibility_id, el['value'])[index].click
-  else
-    raise('click_by_index: Tipo não implementado ou não encontrado')
-  end
+  find_element(el)[index].click
   $logger.info("Clicou no indice #{index} do elemento #{el['value']} usando o tipo de busca #{el['type']}")
 end
 
 def element_exists?(el)
   $logger.info("Verificando se existe o elemento #{el['value']} usando o tipo de busca #{el['type']}")
-  case el['type']
-  when 'XPATH'
-    return $driver.find_elements(:xpath, el['value']).count > 0
-  when 'ID'
-    return $driver.find_elements(:id, el['value']).count > 0
-  when 'CLASS'
-    return $driver.find_elements(:class, el['value']).count > 0
-  when 'ACCESS_ID'
-    return $driver.find_elements(:accessibility_id, el['value']).count > 0
-  else
-    raise('element_exists?: Tipo não implementado ou não encontrado')
-  end
+  find_elements(el).count > 0
 end
 
-def elements(el)
+def find_elements(el)
   $logger.info("Buscou a lista de elementos #{el['value']} usando o tipo de busca #{el['type']}")
   case el['type']
   when 'XPATH'
@@ -102,71 +64,24 @@ end
 
 def element_is_enabled?(el)
   $logger.info("Elemento habilitado #{el['value']} usando o tipo de busca #{el['type']}")
-  case el['type']
-  when 'XPATH'
-    return $driver.find_elements(:xpath, el['value']).enabled
-  when 'ID'
-    return $driver.find_elements(:id, el['value']).enabled
-  when 'CLASS'
-    return $driver.find_elements(:class, el['value']).enabled
-  when 'ACCESS_ID'
-    return $driver.find_elements(:accessibility_id, el['value']).enabled
-  else
-    raise('element_is_enabled?: Tipo não implementado ou não encontrado')
-  end
+  find_elements(el).enabled
 end
 
 def get_text(el)
   $logger.info("Está buscando o texto do elemento #{el['value']} usando o tipo de busca #{el['type']}")
-  case el['type']
-  when 'XPATH'
-    return $driver.find_element(:xpath, el['value']).text
-  when 'ID'
-    return $driver.find_element(:id, el['value']).text
-  when 'CLASS'
-    return $driver.find_element(:class, el['value']).text
-  when 'ACCESS_ID'
-    return $driver.find_element(:accessibility_id, el['value']).text
-  else
-    raise "get_text: Tipo não implementado ou não encontrado"
-  end
+  wait_for_element_exist(el)
+  find_element(el).text
 end
 
 def get_text_index(el, index)
   $logger.info("Indice do texto #{index} do elemento #{el['value']} usando o tipo de busca #{el['type']}")
-  case el['type']
-  when 'XPATH'
-    return $driver.find_elements(:xpath, el['value']).get(index).text
-  when 'ID'
-    return $driver.find_elements(:id, el['value']).get(index).text
-  when 'CLASS'
-    return $driver.find_elements(:class, el['value']).get(index).text
-  when 'ACCESS_ID'
-    return $driver.find_elements(:accessibility_id, el['value']).get(index).text
-  else
-    raise "get_text_index: Tipo não implementado ou não encontrado"
-  end
+  find_element(el)[index].text
 end
 
 def fill_in(el, text)
-  case el['type']
-  when 'XPATH'
-    element = $driver.find_element(:xpath, el['value'])
-    clean_text(element)
-    element.send_keys text
-  when 'ID'
-    element = $driver.find_element(:id, el['value'])
-    clean_text(element)
-    element.send_keys text
-  when 'CLASS'
-    element = $driver.find_element(:class, el['value'])
-    clean_text(element)
-    element.send_keys text
-  when 'ACCESS_ID'
-    element = $driver.find_element(:accessibility_id, el['value'])
-    clean_text(element)
-    element.send_keys text
-  end
+  element = find_element(el)
+  clean_text(element)
+  element.send_keys text
   $logger.info("Preencheu o campo #{el} usando o tipo de busca #{el['type']} com o valor #{text}")
 end
 
@@ -175,9 +90,9 @@ def tap_screen(screen_x, screen_y)
 end
 
 def clean_text(el)
-  if el.text.size > 0
-    el.clear
-  end
+  #if el.text.size > 0
+  el.clear
+  #end
 end
 
 def android?
@@ -197,21 +112,16 @@ def hide_keyboard
   $logger.info('Fechou o teclado virtual')
 end
 
-def swipe_element(el)
-  $driver.find_element(:xpath, el['value'])
-  # Deslizar o elemento para a esquerda
-  $driver.swipe(start_x: 0.9, start_y: 0.5, end_x: 0.1, end_y: 0.5, duration: 800)
-end
-
 def get_center_screen
         window = get_window
         start_x = window.height * 0.50
         start_y = window.height * 0.50
         {x: start_x, y: start_y }
 end
+
  # Gets the size element
 def get_size_element(el)
-    element_size = $driver.find_element(:xpath, el['value']).size
+    element_size = find_element(el).size
     { size: element_size }
 end
 
@@ -223,7 +133,7 @@ def swiper_element_direction(el, direction, size = 0.65)
 
   case dir
   when 'left'
-    element = $driver.find_element(:xpath, el['value'])
+    element = find_element(el)
     location = element.location
     start_x = location.x + element_size[:size].width
     start_y = location.y + element_size[:size].height / 2
@@ -231,6 +141,21 @@ def swiper_element_direction(el, direction, size = 0.65)
     end_y = start_y
   end
   $driver.execute_script("mobile: dragFromToForDuration", {'duration':'1.0', 'fromX': start_x, 'fromY': start_y, 'toX': end_x, 'toY': end_y})
+end
+
+def get_attribute(el, attribute)
+  wait_for_element_exist(el)
+  elemento = find_element(el)
+  case attribute
+  when 'value'
+    elemento.attribute('value')
+  when 'name'
+    elemento.attribute('name')
+  when 'label'
+    elemento.attribute('label')
+  else
+    raise('Tipo de atributo nao definido')
+  end
 end
 
 def refresh_screen

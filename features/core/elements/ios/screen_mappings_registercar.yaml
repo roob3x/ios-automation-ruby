@@ -13,3 +13,15 @@ ano_input:
 cadastrar_btn:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="Cadastrar"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+warning_msg_brand:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[@name="Por favor, Inserir marca maior que 2 caracteres "]'
+warning_msg_model:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[@name="Por favor, Inserir modelo maior que 2 caracteres "]'
+warning_msg_description:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[@name="Por favor, Inserir versao maior que 5 caracteres "]'
+warning_msg_year:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[@name="Por favor insira ano maior que 1940 ou ate 2024 "]'

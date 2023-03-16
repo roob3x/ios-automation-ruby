@@ -2,7 +2,7 @@
 Funcionalidade: Cadastro Veiculo
 
 
-    @cadastro @sucesso @sanity
+    @cadastro_sucesso @sanity
     Cenário: Verifique que é possível cadastrar um novo veiculo
         Dado   Que estou na home do app
         Quando Clico em Add
@@ -12,8 +12,7 @@ Funcionalidade: Cadastro Veiculo
         E Clico em cadastrar
         Então  Valido que o carro foi cadastrado com sucesso
 
-    
-    @remover_carro @sucesso @sanity
+    @remover_carro @sucesso
     Cenário: Verifique que é feedback para lista de carros vazia
         Dado   Que estou na home do app
         Quando Apago todos os carros da lista
