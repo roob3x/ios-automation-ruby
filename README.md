@@ -1,5 +1,5 @@
 # androind-automation-ruby
-Projeto de automacao de testes mobile em IOS utilizando Ruby,Appium e cucumber.
+Projeto de automacao de testes mobile em IOS utilizando Ruby,Appium e Capybara.
 Para que possamos executar o projeto precisamos baixar algumas dependencias:
 
 ## DOWNLOADS
@@ -10,7 +10,7 @@ Para que possamos executar o projeto precisamos baixar algumas dependencias:
     https://github.com/appium/appium-inspector/releases
 
 
-## Configurando variaveis de ambiente JAVA_HOME A ANDROID_HOME
+## Configurando variaveis de ambiente JAVA_HOME E ANDROID_HOME
 
 No terminal execute os seguintes comandos: 
 nano ~/.zshrc
@@ -129,6 +129,7 @@ Na raiz do seu projeto execute os seguintes comandos:
 2- gem install allure-cucumber
 
 3- bundle install
+
 
 Feito isso seu projeto esta configurado para execucao. para isso exucute:
 rake 'run_sequential_test[ios,@sanity]'

@@ -20,4 +20,10 @@ end
 
 Entao('valido que é retornado msg de lista vazia') do
     @home.title_empty_car_list?
+    sleep(2)
+end
+
+Quando('seleciono o carro {string}') do |model|
+    @home.select_car(model)
+    sleep(2)
 end

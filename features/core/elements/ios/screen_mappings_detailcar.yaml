@@ -1,0 +1,12 @@
+brand_detail_navigationlink:
+  type: 'ACCESS_ID'
+  value: 'Marca: RENUALT'
+model_detail_navigationlink:
+  type: 'ACCESS_ID'
+  value: 'Modelo: KWID'
+version_detail_navigationlink:
+  type: 'ACCESS_ID'
+  value: 'Versao: 1.0'
+year_detail_navigationlink:
+  type: 'ACCESS_ID'
+  value: 'Ano/Modelo: 2019'

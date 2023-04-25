@@ -33,4 +33,17 @@ class HomePage
   def title_empty_car_list?
       wait_for_element_exist @mappings['empty_car_list']
   end
+
+  def select_car text
+    case text
+    when 'KWID'
+      click @mappings['kwid_menu']
+    when 'PULSE'
+      click @mappings['pulse_menu']
+    when 'T-Cross'
+      click @mappings['tcross_menu']
+    else
+      puts('Insert a valid model name')
+    end
+  end
 end

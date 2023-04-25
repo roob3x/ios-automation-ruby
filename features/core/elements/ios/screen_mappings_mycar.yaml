@@ -6,16 +6,16 @@ add_btn:
   value: 'Add'
 tcross_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="t-cross, T-Cross"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeStaticText[@name="T-Cross"]'
 delete_menu:
   type: 'XPATH'
   value: '//XCUIElementTypeButton[@name="Delete"]'
 pulse_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="pulse, PULSE"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeStaticText[@name="PULSE"]'
 kwid_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="kwid, KWID"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeStaticText[@name="KWID"]'
 compass_menu:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="compass, Compass"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
