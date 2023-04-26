@@ -15,7 +15,7 @@ pulse_menu:
   value: '//XCUIElementTypeStaticText[@name="PULSE"]'
 kwid_menu:
   type: 'XPATH'
-  value: '//XCUIElementTypeStaticText[@name="KWID"]'
+  value: '//XCUIElementTypeCell[@name="kwid, KWID"]/XCUIElementTypeOther[1]'
 compass_menu:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="compass, Compass"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
