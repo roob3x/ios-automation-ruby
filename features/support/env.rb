@@ -4,6 +4,7 @@ require 'allure-cucumber'
 require 'appium_lib'
 require 'cucumber'
 require 'selenium-webdriver'
+require 'date'
 
 $wait = Selenium::WebDriver::Wait.new(timeout: 60)
 time  = Time.new

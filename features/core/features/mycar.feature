@@ -1,10 +1,11 @@
 # language: pt
 Funcionalidade: Cadastro Veiculo
 
+    Contexto: Carregar o aplicativo de Mycar
+        Dado   Que estou na home do app
 
     @cadastro_sucesso @sanity
     Cenário: Verifique que é possível cadastrar um novo veiculo
-        Dado   Que estou na home do app
         Quando Clico em Add
         E Preencho os dados do veiculo
                | marca | modelo     | versao         | ano_modelo |
@@ -14,7 +15,6 @@ Funcionalidade: Cadastro Veiculo
 
     @detalhe_veiculo @sanity
     Cenário: Verifique que é possivel verificar o detalhe do carro
-        Dado   Que estou na home do app
         Quando seleciono o carro "KWID"
         Entao valido o detalhe do carro
             | marca   | modelo | versao | ano  |
@@ -23,6 +23,5 @@ Funcionalidade: Cadastro Veiculo
 
     @remover_carro @sucesso @sanity
     Cenário: Verifique feedback para lista de carros vazia
-        Dado   Que estou na home do app
         Quando Apago todos os carros da lista
         Entao valido que é retornado msg de lista vazia
