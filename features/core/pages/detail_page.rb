@@ -10,15 +10,15 @@ class DetailPage
   end
 
   def get_name_brand
-      get_text @mappings['brand_detail_navigationlink']
+    get_text @mappings['brand_detail_navigationlink']
   end
 
   def get_name_model
-      get_text @mappings['model_detail_navigationlink']
+    get_text @mappings['model_detail_navigationlink']
   end
 
   def get_name_version
-      get_text @mappings['version_detail_navigationlink']
+    get_text @mappings['version_detail_navigationlink']
   end
 
   def get_name_year

@@ -22,3 +22,9 @@ compass_menu:
 empty_car_list:
   type: 'ACCESS_ID'
   value: 'Voce nao possui carros cadastrados :('
+fipe_btn:
+  type: 'XPATH'
+  value: '//XCUIElementTypeButton[@name="Fipe"]'
+carros_btn:
+  type: 'XPATH'
+  value: '//XCUIElementTypeButton[@name="Carros"]'

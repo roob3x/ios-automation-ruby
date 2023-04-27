@@ -1,0 +1,24 @@
+fipe_btn:
+  type: 'ACCESS_ID'
+  value: 'Fipe'
+brand_pickle:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Marca:"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
+brand_fipe:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="BMW"]'
+model_pickle:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Modelo:"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+model_fipe:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="116iA 1.6 TB 16V 136cv 5p"]'
+year_pickle:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Ano/Combustivel:"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+year_type_fipe:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="2014 Gasolina"]'
+month_ref:
+  type: 'XPATH'
+  value: '//XCUIElementTypeCell[@name="Mes de referencia: , abril de 2023"]'
