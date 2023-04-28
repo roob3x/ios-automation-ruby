@@ -18,7 +18,7 @@ Funcionalidade: Cadastro Veiculo
         Quando seleciono o carro "KWID"
         Entao valido o detalhe do carro
             | marca   | modelo | versao | ano  |
-            | RENUALT | KWID   | 1.0    | 2019 |
+            | RENAULT | KWID   | 1.0    | 2019 |
 
 
     @remover_carro @sucesso @sanity

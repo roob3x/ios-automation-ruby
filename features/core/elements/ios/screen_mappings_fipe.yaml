@@ -6,19 +6,25 @@ brand_pickle:
   value: '//XCUIElementTypeCell[@name="Marca:"]/XCUIElementTypeOther[3]/XCUIElementTypeOther'
 brand_fipe:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="BMW"]'
+  value: '//XCUIElementTypeCell[@name="NAME"]'
 model_pickle:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="Modelo:"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
+  value: '//XCUIElementTypeStaticText[@name="Modelo:"]'
 model_fipe:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="116iA 1.6 TB 16V 136cv 5p"]'
+  value: '//XCUIElementTypeCell[@name="NAME"]'
 year_pickle:
   type: 'XPATH'
   value: '//XCUIElementTypeCell[@name="Ano/Combustivel:"]/XCUIElementTypeOther[2]/XCUIElementTypeOther'
 year_type_fipe:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="2014 Gasolina"]'
+  value: '//XCUIElementTypeCell[@name="NAME"]'
 month_ref:
   type: 'XPATH'
-  value: '//XCUIElementTypeCell[@name="Mes de referencia: , abril de 2023"]'
+  value: '//XCUIElementTypeStaticText[contains(@name, " de 20")]'
+value_fipe:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[contains(@name, "R$") and contains(@name, ",")]'
+code_fipe:
+  type: 'XPATH'
+  value: '//XCUIElementTypeStaticText[contains(@name, "-")]'

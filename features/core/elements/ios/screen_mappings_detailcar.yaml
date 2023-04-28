@@ -1,6 +1,6 @@
 brand_detail_navigationlink:
   type: 'ACCESS_ID'
-  value: 'Marca: RENUALT'
+  value: 'Marca: RENAULT'
 model_detail_navigationlink:
   type: 'ACCESS_ID'
   value: 'Modelo: KWID'
