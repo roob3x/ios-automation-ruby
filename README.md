@@ -1,4 +1,4 @@
-# androind-automation-ruby
+# android-automation-ruby
 Projeto de automacao de testes mobile em IOS utilizando Ruby,Appium e Capybara.
 Para que possamos executar o projeto precisamos baixar algumas dependencias:
 
